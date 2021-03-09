@@ -1101,14 +1101,14 @@ button.btn.btn-outline-dark.btn-carousel.text-uppercase.text-center {
   font-size: 1.5rem;
   line-height: 1.833;
   margin-bottom: 3.6rem;
-  color: #000000;
+  color: #fff;
 }
 
 .about3 {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.833;
-  color: #000000;
+  color: #fff;
   padding-left: 1.25rem;
 }
 
@@ -1186,6 +1186,60 @@ li a.badge-googleplay {
   padding-left: 1.111em;
   margin: 0;
   position: relative;
+}
+
+/* #Contact Us
+================================================== */
+.contact1 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  align-self: baseline;
+}
+
+.contact2 {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.833;
+  color: #fff;
+}
+
+.contact3 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 3.6rem;
+  color: #fff;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.form-control:focus {
+  color: #e1e2e2;
+  background-color: #222b31;
+  border-color: #ed1c24;
+  outline: 0;
+}
+
+input.form-control {
+  height: 2.5rem;
+  padding: 1.5rem 1rem;
+}
+
+input.form-control,
+#textarea {
+  display: block;
+  border: 0;
+  outline: none;
+  vertical-align: middle;
+  /* color: #222b31; */
+  font-size: 1rem;
+  line-height: 2rem;
+  max-width: 100%;
+  background: #21252a;
+  font-weight: 600;
 }
 
 /* #Footer
