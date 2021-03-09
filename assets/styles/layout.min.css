@@ -117,7 +117,7 @@ h5 > a:hover,
 h6 > a:hover {
   text-decoration: none;
 }
-h1 {
+h1.title {
   font-size: 3.125em;
 }
 h2 {
@@ -1027,9 +1027,18 @@ button.btn.btn-outline-dark.btn-carousel.text-uppercase.text-center {
 
 /* #Testimonial Slider
 ================================================== */
+
+
+.slider-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 50vh!important;
+}
+
 .slider-caption {
   position: absolute;
-  top: 30%;
+  top: 15vh;
   right: 15%;
   /* bottom: 15%; */
   left: 15%;
