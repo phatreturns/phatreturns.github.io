@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>PHAT Returns | Defence & Personal Tax Returns</title>
+  <title>Defence Force Tax Returns | PHAT Returns</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="author" content="PHAT Returns" />
@@ -26,297 +26,174 @@
   <!-- GLOBAL MANDATORY STYLES -->
   <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.min.css" />
   <link href="assets/styles/layout.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 </head>
 <!-- END HEAD -->
 
 <!-- BODY -->
 
-<body>
+<body class="page-on-scroll">
   <!--========== HEADER ==========-->
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+  <div id="nav" class="navigation-wrap start-header start-style sticky">
     <div class="container-fluid text-uppercase">
-      <!-- Brand -->
-      <a class="navbar-brand" href="index.html">
-        <img style="height: 3em;" src="images/logo_clear.png">
-      </a>
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="html/pages/about.html">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Services
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+              <img style="height: 3em;" src="images/logo_clear.png">
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Defence Force Tax Returns</a></li>
-              <li><a class="dropdown-item" href="#">Personal Tax Returns</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/html/pages/faq.html">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="html/pages/contact.html">Contact</a>
-          </li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ms-auto py-4 py-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="defence-force.html">Defence Force Tax Returns</a></li>
+                    <li><a class="dropdown-item" href="personal.html">Personal Tax Returns</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Forms
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li role="button"><a class="dropdown-item" onclick="window.open('assets/forms/Defence-force-form.pdf')">Defence Force Tax Form</a></li>
+                    <li role="button"><a class="dropdown-item" onclick="window.open('assets/forms/All-Industries-form.pdf')">All Industries Form</a></li>
+                    <li role="button"><a class="dropdown-item" onclick="window.open('assets/forms/Travel-Agents-form.pdf')">Travel Agent Tax Form</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
   <!--========== END HEADER ==========-->
 
   <!--========== PAGE LAYOUT ==========-->
 
-  <!--========== IMAGE CAROUSEL ==========-->
-  <div class="container-full-width">
-    <div id="herocarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#herocarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#herocarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#herocarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/hero_officer.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Defence Force Tax Returns</h1>
-            <h4>PHAT Returns tax specialists understand the unique taxation needs<br> of Defence Force members</h4>
-            <a class="btn btn-outline-light btn-carousel text-uppercase text-center active" href="https://app.acuityscheduling.com/schedule.php?owner=19567342">book
-              appointment</a>
-            <button class="btn btn-outline-light btn-carousel text-uppercase text-center">find out more</button>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/hero_army.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Defence Force Tax Returns</h1>
-            <h4>PHAT Returns tax specialists understand the unique taxation needs<br> of Defence Force members</h4>
-            <a class="btn btn-outline-light btn-carousel text-uppercase text-center active">book
-              appointment</a>
-            <button class="btn btn-outline-light btn-carousel text-uppercase text-center">find out more</button>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/hero_office.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Personal Tax Returns</h1>
-            <h4>No technical terms or financial jargon- we make it simple for you to<br> understand your entitlements
-            </h4>
-            <a class="btn btn-outline-light btn-carousel text-uppercase text-center active" href="https://app.acuityscheduling.com/schedule.php?owner=19567342">book
-              appointment</a>
-            <button class="btn btn-outline-light btn-carousel text-uppercase text-center">find out more</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--========== END IMAGE CAROUSEL ==========-->
-
-  <!--========== BOOKING BANNER MINOR ==========-->
-  <div class="bg-color-gray">
-    <div class="content container">
+  <!--========== DEFENCE FORCE TAX RETURNS ==========-->
+  <div class="bg-color-black">
+    <div class="content-xl container min-vh-100">
+      <!-- <div class="vertical-line"></div> -->
       <div class="row">
-        <div class="col-8 text-uppercase text-center align-self-center">
-          <h2>get more out of your tax return</h2>
-        </div>
-        <div class="col-4">
-          <a class="btn btn-danger btn-lg text-uppercase text-center" href="https://app.acuityscheduling.com/schedule.php?owner=19567342">book appointment</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--========== END BOOKING BANNER MINOR ==========-->
-
-  <!--========== BOOKING BANNER MAJOR ==========-->
-  <div class="bg-color-white">
-    <div class="content-md container">
-      <!-- <div class="row margin-b-40">
-        <div class="col-12 text-uppercase text-center align-self-center">
-          <h2>return</h2>
-          <hr/>
-        </div>
-      </div> -->
-      <div class="row">
-        <div class="col-sm-4 text-center align-self-center">
-          <button type="button" class="btn btn-outline-secondary btn-circle btn-xl">
-            <svg class="h-50 w-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-        <div class="col-sm-4 text-center align-self-center">
-          <button type="button" class="btn btn-outline-secondary btn-circle btn-xl">
-            <svg class="h-50 w-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-            </svg></button>
-        </div>
-        <div class="col-sm-4 text-center align-self-center">
-          <button type="button" class="btn btn-outline-secondary btn-circle btn-xl">
-            <svg class="h-50 w-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg></button>
+        <div class="col-sm-12">
+          <h3 class="subhead">DEFENCE FORCE TAX RETURNS</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4 text-center align-self-center">
-          <h3 class="text-uppercase text-center align-self-center"><a
-              href="https://app.acuityscheduling.com/schedule.php?owner=19567342">1. Make an Appointment</a></h3>
-          <p>Call, email us or book online to secure in your personal tax return appointment.</p>
-        </div>
-        <div class="col-sm-4 text-center align-self-center">
-          <h3 class="text-uppercase text-center align-self-center"><a
-              href="https://app.acuityscheduling.com/schedule.php?owner=19567342">2. fill in a booking form</a></h3>
-          <p>Fill out a pre-appointment booking form and email or fax it back to us with your PAYG and other tax
-            related
-            documents.</p>
-        </div>
-        <div class="col-sm-4 text-center align-self-center">
-          <h3 class="text-uppercase text-center align-self-center"><a
-              href="https://app.acuityscheduling.com/schedule.php?owner=19567342">3. take our call</a></h3>
-          <p>Our tax specialist will call you at your booking time to complete your tax return.</p>
+        <div class="col-sm-12">
+          <h1 class="about1 text-white pb-5">Our PHAT Returns tax specialists understand the unique requirements of
+            Defence Force tax.</h1>
         </div>
       </div>
-    </div>
-  </div>
-  <!--========== END BOOKING BANNER MAJOR ==========-->
-
-  <!--========== BOOKING BANNER MINOR ==========-->
-  <div class="bg-color-gray">
-    <div class="content container">
-      <div class="row">
-        <div class="col-8 text-uppercase text-center align-self-center">
-          <h2>enjoy a personalised service</h2>
-        </div>
-        <div class="col-4">
-          <a class="btn btn-danger btn-lg text-uppercase text-center" href="https://app.acuityscheduling.com/schedule.php?owner=19567342">book appointment</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--========== END BOOKING BANNER MINOR ==========-->
-
-  <!--========== INFO BANNER  ==========-->
-  <div class="bg-color-white">
-    <div class="content-md container">
-      <!-- <div class="row margin-b-40">
-          <div class="col-12 text-uppercase text-center align-self-center">
-            <h2>return</h2>
-            <hr/>
+      <div class="row mb-5">
+        <div class="col-sm-6">
+          <h2 class="subhead text-white mb-0">
+            Did you know...
+          </h2>
+          <div class="timeline mt-4 pe-1 position-relative">
+            <div class="pb-3 position-relative">
+              <ul>
+                <li class="df1">
+                  <p>Travel in your own vehicle for work purposes can be deductible?</p>
+                </li>
+                <li class="df1">
+                  <p>The Medicare sections are different for Defence Force tax returns, and mistakes could mean you end
+                    up owing money?</p>
+                </li>
+                <li class="df1">
+                  <p>The gear and equipment you purchase for your job can be tax deductible?</p>
+                </li>
+                <li class="df1">
+                  <p>Your expenses at recruit training can be deductible?</p>
+                </li>
+                <li class="df1">
+                  <p>Not all tax agents know how to handle tax exempt income from deployments?</p>
+                </li>
+                <li class="df1">
+                  <p>Postings in remote areas of Australia can qualify you for certain tax rebates?</p>
+                </li>
+                <li class="df1">
+                  <p>Having a <a class="color-red" href="https://www.washingtonbrown.com.au/free-quote/?RID=NTZAQPCXSJ"
+                      target="_blank">depreciation schedule</a> for your investment property could get you back
+                    thousands extra on your tax return?</p>
+                </li>
+                <li class="df1">
+                  <p>If you get behind on your tax returns we can help you catch up in one consultation?</p>
+                </li>
+                <li class="df1">
+                  <p>If you have been medically discharged you could be entitled to a tax offset?</p>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div> -->
-      <div class="row justify-content-around mb-4">
-        <div class="col-sm-3 text-center align-self-center">
-          <svg class="h-50 w-50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#bbb">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
         </div>
-        <div class="col-sm-3 text-center align-self-center">
-          <svg class="h-50 w-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#bbb">
-            <path
-              d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-          </svg>
+        <div class="col-sm-6">
+          <h2 class="subhead mb-0">
+            BENEFITS OF GOING WITH US
+          </h2>
+          <div class="timeline mt-4 pe-1 position-relative">
+            <div class="pb-3 position-relative">
+              <ul>
+                <li class="df1">
+                  <p><span class="color-red">Defence Force tax specialists: </span>We have extensive experience with the
+                    Army, Navy and Air Force, across all ranks and specialties, including:</p>
+                  <ul class="py-2">
+                    <li><p>Defence Force members studying at ADFA or Military College.</p></li>
+                    <li><p>Defence Force members are currently deployed or who have served overseas.</p></li>
+                    <li><p>Defence Force members with investment properties, managed funds, etc.</p></li>
+                    <li><p>Special Forces units – we know what to ask and what not to ask.</p></li>
+                  </ul>
+                </li>
+                <li class="df1">
+                  <p><span class="color-red">Phone consultations: </span>All tax returns are completed over the phone, so you don’t have to leave your base, ship, course or deployment.</p>
+                </li>
+                <li class="df1">
+                  <p><span class="color-red">One tax agent: </span>Completing tax returns via phone means we’re not limited by locality so you don’t need to change tax agents ever again.</p>
+                </li>
+                <li class="df1">
+                  <p><span class="color-red">Maximum returns: </span>We know all the specific deductions for your occupation, so you get a great tax return every year!</p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row justify-content-around">
-        <div class="col-sm-3 text-center align-self-top">
-          <h3 class="text-uppercase text-center align-self-center"><a
-              href="https://app.acuityscheduling.com/schedule.php?owner=19567342">DEFENCE FORCE</a></h3>
-          <p class="mb-4">We have extensive experience with all three defence forces, across all ranks and
-            specialties.</p>
+      <div class="row">
+        <div class="col-sm-9">
+          <h1 class="subhead color-red pt-5 fw-normal">Get your Defence Force tax done right with PHAT Returns.</h1>
         </div>
         <div class="col-sm-3 text-center align-self-top">
-          <h3 class="text-uppercase text-center align-self-center"><a
-              href="https://app.acuityscheduling.com/schedule.php?owner=19567342">PERSONAL TAX</a></h3>
-          <p class="mb-4">Preparing your own tax return online can be confusing. Let our personal tax specialist help
-            you with your return.</p>
-        </div>
-      </div>
-      <div class="row justify-content-around">
-        <div class="col-sm-3 text-center align-self-center">
-          <button class="btn btn-outline-dark btn-carousel text-uppercase text-center">find out more</button>
-        </div>
-        <div class="col-sm-3 text-center align-self-center">
-          <button class="btn btn-outline-dark btn-carousel text-uppercase text-center">find out more</button>
+            <img style="height: 8em;" src="images/army_football.png">
+            <p class="text-white">Proud major sponsors of Army Football</p>
         </div>
       </div>
     </div>
   </div>
-  <!--========== END INFO BANNER ==========-->
-
-  <!--========== TESTIMONIAL SLIDER ==========-->
-  <div class="container-full-width">
-    <div id="testimonialslider" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/1.jpg" class="d-block w-100" alt="...">
-          <div class="slider-caption d-none d-md-block">
-            <h1>"Awesome service again this year from Travis! Thank you for making our tax easy to deal with! Highly
-              recommended! Cheers!"</h1>
-            <h4>Tanya</h4>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/2.jpg" class="d-block w-100" alt="...">
-          <div class="slider-caption d-none d-md-block">
-            <h1>Thank you so much!! Really should have done my taxes (and by that I mean 6 years worth) earlier, but as
-              you said, it’s a form of forced savings!!.</h1>
-            <h4>Toni</h4>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/3.jpg" class="d-block w-100" alt="...">
-          <div class="slider-caption d-none d-md-block">
-            <h1>I always love getting my phat return it’s one of my yearly highlights you guys are simply the best...
-              better than all the rest 🙂</h1>
-            <h4>Rochelle</h4>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/4.jpg" class="d-block w-100" alt="...">
-          <div class="slider-caption d-none d-md-block">
-            <h1>Kathryn, I can't believe how easy and enjoyable you make the process of doing our tax! Thanks so much.
-            </h1>
-            <h4>Kimberley
-            </h4>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/5.jpg" class="d-block w-100" alt="...">
-          <div class="slider-caption d-none d-md-block">
-            <h1>Awesome tax return company. If you want more tax back, go to the guys been with them for years they are
-              great.</h1>
-            <h4>Sharon
-            </h4>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialslider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialslider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
   </div>
-  <!--========== END TESTIMONIAL SLIDER ==========-->
+  </div>
+  <!--========== DEFENCE FORCE TAX RETURNS ==========-->
 
   <!--========== END PAGE LAYOUT ==========-->
 
@@ -332,29 +209,42 @@
           <ul class="list-unstyled mb-0">
             <li class="pb-2">
               <svg style="height: 2em" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               <a class="text-light">PO BOX 243
                 Northcote VIC 3070
-                </a>
+              </a>
             </li>
             <li class="pb-2">
               <svg style="height: 2em" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <a href="tel:1300763575" class="text-light">1300 763 575 or +61 3 8508 9005</a>
             </li>
             <li class="pb-2">
               <svg style="height: 2em" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                  d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
               </svg>
               <a class="text-light">+61 3 8648 6821</a>
             </li>
             <li>
               <svg style="height: 2em" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <a href="mailto:info@phatreturns.com.au" class="text-light">info@phatreturns.com.au</a>
+            </li>
+            <li class="pt-2">
+              <a href="https://www.facebook.com/PHATReturns/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-facebook"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
@@ -365,8 +255,8 @@
       </div>
     </div>
     <div class="text-center p-3">
-      <p class="text-white fs-6">
-      Copyright © 2021 P.H.A.T. Returns. All Rights Reserved.</p>
+      <p class="text-gray fs-6">
+        Copyright © 2021 P.H.A.T. Returns. All Rights Reserved.</p>
     </div>
     <!-- Copyright -->
   </footer>
@@ -375,6 +265,7 @@
   <!-- JAVASCRIPT -->
   <!-- CORE PLUGINS -->
   <script src="assets/scripts/bootstrap.bundle.js"></script>
+  <script src="assets/scripts/nav.js"></script>
   <!-- PAGE LEVEL PLUGINS -->
   <!-- PAGE LEVEL SCRIPTS -->
 </body>

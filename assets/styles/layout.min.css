@@ -139,17 +139,17 @@ h4 {
 }
 ::selection {
   color: #fff;
-  background: #ed1c24;
+  background: #ed1c25;
   text-shadow: none;
 }
 ::-webkit-selection {
   color: #fff;
-  background: #ed1c24;
+  background: #ed1c25;
   text-shadow: none;
 }
 ::-moz-selection {
   color: #fff;
-  background: #ed1c24;
+  background: #ed1c25;
   text-shadow: none;
 }
 .section-seperator {
@@ -243,7 +243,7 @@ fieldset[disabled] .btn-theme {
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 2px;
-  background-color: #ed1c24;
+  background-color: #ed1c25;
   width: 75%;
   border-radius: 0;
 }
@@ -298,17 +298,6 @@ ul.dropdown {
   padding: 2px 0;
   font-weight: 500;
   line-height: 2;
-}
-.header .nav-item:hover > ul,
-ul li ul:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-  z-index: 1001;
-  background: #fff;
-  border-bottom-color: #f0f0f0;
-  border-radius: 2%;
-  width: max-content;
 }
 li.droplist {
   padding: 5px 15px;
@@ -557,7 +546,10 @@ li.droplist:hover {
   color: #fff;
 }
 .color-red {
-  color: #ed1c24;
+  color: #ed1c25;
+}
+.color-red:hover {
+  color: #ed1c25;
 }
 .color-heading {
   color: #1d1d1d;
@@ -624,6 +616,10 @@ li.droplist:hover {
 .content-lg {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+.content-xl {
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 .full-width {
   width: 100%;
@@ -1025,7 +1021,7 @@ a.nav-link.active {
 }
 .btn-outline-secondary:hover {
   color: #fff;
-  background-color: #ed1c24;
+  background-color: #ed1c25;
   border-color: #ffffff;
 }
 
@@ -1082,7 +1078,7 @@ button.btn.btn-outline-dark.btn-carousel.text-uppercase.text-center {
   letter-spacing: 0.4em;
   margin-top: 0;
   margin-bottom: 6rem;
-  color: #ed1c24;
+  color: #ed1c25;
 }
 
 .about1 {
@@ -1162,6 +1158,44 @@ li a.badge-googleplay {
   text-rendering: optimizeLegibility;
 }
 
+/* #Services
+================================================== */
+.timeline::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: #404040;
+  position: absolute;
+  top: var(--timeline-top-adjust);
+  left: 15px;
+}
+
+.timeline__block:last-child {
+  padding-bottom: 0;
+}
+
+::marker {
+  color: #ed1c25;
+}
+
+.df1 {
+  font-size: 18px;
+  color: rgb(161,161,162);
+  font-weight: 400;
+}
+
+/* .timeline__bullet {
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 15px;
+  left: 0;
+} */
+
 /* #FAQ
 ================================================== */
 .faq1 {
@@ -1219,7 +1253,7 @@ li a.badge-googleplay {
 .form-control:focus {
   color: #e1e2e2;
   background-color: #222b31;
-  border-color: #ed1c24;
+  border-color: #ed1c25;
   outline: 0;
 }
 
