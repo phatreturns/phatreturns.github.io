@@ -621,6 +621,10 @@ li.droplist:hover {
   padding-top: 150px;
   padding-bottom: 150px;
 }
+.content-custom {
+  padding-top: 150px;
+  padding-bottom: 30px;
+}
 .full-width {
   width: 100%;
   height: auto;
