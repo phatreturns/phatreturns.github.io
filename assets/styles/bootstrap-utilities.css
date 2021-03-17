@@ -512,6 +512,10 @@
   min-width: 100vw !important;
 }
 
+.h-10 {
+  height: 10% !important;
+}
+
 .h-25 {
   height: 25% !important;
 }
