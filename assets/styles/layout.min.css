@@ -1267,6 +1267,12 @@ li a.badge-googleplay {
   background-image: url("images/google-play.png");
 }
 
+@media (max-width: 768px) {
+  mobile-fs-h3 {
+    font-size: 1.25rem!important;
+  }
+}
+
 /* #Accordion
 ================================================== */
 
@@ -1444,6 +1450,9 @@ p.footer {
 }
 @media (max-width: 768px) {
   .footer-col {
+    width: 55% !important;
+  }
+  .spacer-footer {
     margin-top: 5rem !important;
   }
   .tpb-image {
