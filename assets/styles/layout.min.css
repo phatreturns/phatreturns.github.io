@@ -243,7 +243,7 @@ fieldset[disabled] .btn-theme {
   line-height: 100%;
   letter-spacing: 2px;
   background-color: #ed1c25;
-  width: 75%;
+  /* width: 75%; */
   border-radius: 0;
 }
 .btn-carousel {
