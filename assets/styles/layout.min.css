@@ -1432,3 +1432,20 @@ p.footer {
     height: 10vh!important;
   }
 }
+
+/* #Incompatible Browser Alert (IE)
+================================================== */
+
+alert.alert-danger {
+  display:none
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){
+  .alert.alert-danger {
+    display:block!important;
+    top:0;
+    position:fixed;
+    z-index:100;
+    width:98%;
+  }
+}
