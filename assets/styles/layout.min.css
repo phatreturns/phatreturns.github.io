@@ -1027,6 +1027,7 @@ a.nav-link.active {
 @media (max-width: 768px){
   .booking-minor {
     margin-top: 1rem!important;
+    text-align: center;
   }
 }
 
@@ -1054,7 +1055,7 @@ a.nav-link.active {
 }
 
 @media (max-width: 768px){
-  .booking-major {
+  .spacer {
     margin-top: 2rem!important;
   }
 }
@@ -1203,6 +1204,7 @@ button.btn.btn-outline-dark.btn-carousel.text-uppercase.text-center {
   line-height: 1.833;
   color: #fff;
   padding-left: 1.25rem;
+  line-height: normal;
 }
 
 .about4 {
@@ -1219,6 +1221,7 @@ button.btn.btn-outline-dark.btn-carousel.text-uppercase.text-center {
   padding-left: 1.111em;
   margin: 0;
   position: relative;
+  line-height: normal;
 }
 
 li a.badge-appstore {
@@ -1282,16 +1285,12 @@ li a.badge-googleplay {
   font-weight: 400;
 }
 
-/* .timeline__bullet {
-  display: block;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  top: 15px;
-  left: 0;
-} */
+@media (max-width: 900px) {
+  .mobile-subhead {
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
 
 /* #FAQ
 ================================================== */
@@ -1410,7 +1409,7 @@ p.footer {
 }
 @media (max-width: 768px){
   .footer-col {
-    margin-top: 3rem!important;
+    margin-top: 5rem!important;
   }
   .tpb-image {
     height: 10vh!important;
