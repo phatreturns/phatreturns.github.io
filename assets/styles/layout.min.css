@@ -1299,6 +1299,12 @@ li a.badge-googleplay {
   text-rendering: optimizeLegibility;
 }
 
+@media (max-width: 768px) {
+  .accordion-button {
+    padding: 0 !important;
+  }
+}
+
 /* #Services
 ================================================== */
 .timeline::before {
