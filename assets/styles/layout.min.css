@@ -850,6 +850,21 @@ li.droplist:hover {
   height: 400px !important;
 }
 
+@media (max-width: 548px){
+  h1 {
+    font-size: 2em !important
+  }
+  h2 {
+    font-size: 1.5em !important
+  }
+  h3 {
+    font-size: 1em !important
+  }
+  h4 {
+    font-size: 0.75em !important
+  }
+}
+
 /* #Navigation
 ================================================== */
 
@@ -991,15 +1006,16 @@ a.nav-link.active {
 
 /* #Animations
 ================================================== */
-
-.slide-top {
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-.slide-top2 {
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
-}
-.slide-top3 {
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+@media (min-width: 588px){
+  .slide-top {
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .slide-top2 {
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+  }
+  .slide-top3 {
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+  }
 }
 
 @media (max-width: 548px){
@@ -1028,6 +1044,7 @@ a.nav-link.active {
   .booking-minor {
     margin-top: 1rem!important;
     text-align: center;
+    line-height: normal;
   }
 }
 
