@@ -22,7 +22,7 @@
 
         gtag('config', 'UA-165918460-3');
     </script> -->
-
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
   <!-- GLOBAL MANDATORY STYLES -->
   <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.min.css" />
   <link href="assets/styles/layout.min.css" rel="stylesheet" type="text/css" />
@@ -109,29 +109,36 @@
           <form>
             <div class="row">
               <div class="col mb-5">
-                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                <input id="first-name" type="text" class="form-control" placeholder="First name" aria-label="First name">
               </div>
               <div class="col mb-5">
-                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                <input id="last-name" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
               </div>
             </div>
             <div class="row">
               <div class="col mb-5">
-                <input type="email" class="form-control" placeholder="Email Address" id="exampleInputEmail1"
+                <input id="email" type="email" class="form-control" placeholder="Email Address"
                   aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
               </div>
               <div class="col mb-5">
-                <input type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
+                <input id="phone" type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
               </div>
             </div>
             <div class="mb-5">
-              <textarea class="form-control" id="textarea" placeholder="Message" rows="5"></textarea>
+              <textarea id="message" class="form-control" id="textarea" placeholder="Message" rows="5"></textarea>
             </div>
             <div class="row">
               <div class="spacer col-sm-12 col-md-6">
-                <a class="btn btn-outline-light btn-carousel text-uppercase text-center w-100" href="#"
-                  role="button" aria-label="Send Message Button">send message</a>
+                <div class="g-recaptcha" data-sitekey="6LcukrsZAAAAAOsJmwvTaKY3kKh60F5jpbt36YcX"
+                data-callback="enableBtn" data-expired-callback="disableBtn">
+              </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="spacer col-sm-12 col-md-6">
+                <a id="submit-button" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100" href="#"
+                  role="button" aria-label="Send Message Button" disabled="disabled">send message</a>
               </div>
               <div class="spacer col-sm-12 col-md-6">
                 <a class="btn btn-danger btn-lg text-uppercase text-center w-100"
@@ -263,6 +270,17 @@
   <script src="assets/scripts/lazyload.min.js"></script>
   <!-- PAGE LEVEL PLUGINS -->
   <!-- PAGE LEVEL SCRIPTS -->
+  <!-- <script src="assets/scripts/submitForm.js"></script>
+  <script>
+		function enableBtn() {
+			document.getElementById("submit-button").disabled = false;
+		}
+	</script>
+	<script>
+		function disableBtn() {
+			document.getElementById("submit-button").disabled = true;
+		}
+	</script> -->
 </body>
 
 </html>
