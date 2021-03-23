@@ -1405,6 +1405,7 @@ input.form-control {
   padding: 1.5rem 1rem;
 }
 
+input.form-control,
 textarea#message {
   display: block;
   border: 0;
