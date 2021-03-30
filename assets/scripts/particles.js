@@ -331,4 +331,4 @@
                 f.data(this, "plugin_" + e, new d(this, a));
             });
       });
-})(window, document)
+})(window, document);
