@@ -22,7 +22,7 @@
 
         gtag('config', 'UA-165918460-3');
     </script> -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- GLOBAL MANDATORY STYLES -->
   <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.min.css" />
   <link href="assets/styles/layout.min.css" rel="stylesheet" type="text/css" />
@@ -143,8 +143,12 @@
             </div> -->
             <div class="row">
               <div class="col-sm-12 col-md-6">
-                <div class="g-recaptcha" data-callback="enableBtn" data-theme="dark" data-expired-callback="disableBtn"></div>
-                <input type="submit" value="Send Message" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100" id="submit-button" disabled="disabled">
+                <div class="g-recaptcha"
+                    data-sitekey="6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO"
+                    data-callback="onSubmit"
+                    data-size="invisible">
+                </div>
+                <input type="submit" value="Send Message" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100" id="submit-button">
                 <!--  PHAT Returns sitekey -->
                 <!-- data-sitekey="6Ld7jpQaAAAAADJDesfAcpbMuaCygmPycU-h8tfr" -->
               </div>
