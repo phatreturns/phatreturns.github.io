@@ -22,11 +22,10 @@
 
         gtag('config', 'UA-165918460-3');
     </script> -->
-  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- GLOBAL MANDATORY STYLES -->
   <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.min.css" />
   <link href="assets/styles/layout.min.css" rel="stylesheet" type="text/css" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 </head>
 <!-- END HEAD -->
 
@@ -95,7 +94,7 @@
 
   <!--========== PAGE LAYOUT ==========-->
 
-  <!--========== ABOUT US ==========-->
+  <!--========== CONTACT US ==========-->
   <div class="bg-color-black">
     <div class="content-lg container hero min-vh-100">
       <div class="d-none d-sm-none vertical-line"></div>
@@ -109,7 +108,7 @@
       </div>
       <div class="row mb-5">
         <div class="col-sm-12 col-md-7 pl-5">
-          <form>
+          <form method="post" action="#">
             <div class="row">
               <div class="col mb-5">
                 <input id="first-name" type="text" class="form-control" placeholder="First name"
@@ -132,21 +131,16 @@
             <div class="mb-5">
               <textarea id="message" class="form-control" id="textarea" placeholder="Message" rows="5"></textarea>
             </div>
-            <!-- <div class="row">
-              <div class="spacer col-sm-12 col-md-6">
-                <div class="g-recaptcha" data-sitekey="6LcukrsZAAAAAOsJmwvTaKY3kKh60F5jpbt36YcX"
+            <div class="mb-5">
+              <div class="col-sm-12 col-md-6">
+                <div class="g-recaptcha" data-sitekey="6LdVYZQaAAAAAHFR8IXMegrAATioff9rnrfiTgTL"
                 data-callback="enableBtn" data-expired-callback="disableBtn">
                 </div>
               </div>
-            </div> -->
+            </div>
             <div class="row">
-              <div class="spacer col-sm-12 col-md-6">
-                <a id="submit-button" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100"
-                  href="#" role="button" aria-label="Send Message Button" disabled="disabled">send message</a>
-              </div>
-              <div class="spacer col-sm-12 col-md-6">
-                <a class="btn btn-danger btn-lg text-uppercase text-center w-100"
-                  href="https://app.acuityscheduling.com/schedule.php?owner=19567342" target="_blank" rel="noreferrer" role="button" aria-label="book online button">book online</a>
+              <div class="col-sm-12 col-md-6">
+                <input type="submit" value="Send Message" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100" id="submit-button" disabled="disabled">
               </div>
             </div>
           </form>
@@ -197,7 +191,7 @@
       </div>
     </div>
   </div>
-  <!--========== END ABOUT US ==========-->
+  <!--========== END CONTACT US ==========-->
 
   <!--========== END PAGE LAYOUT ==========-->
 
@@ -265,6 +259,7 @@
   <script src="assets/scripts/lazyload.min.js"></script>
   <!-- PAGE LEVEL PLUGINS -->
   <!-- PAGE LEVEL SCRIPTS -->
+	<script src="assets/scripts/jquery-2.1.3.min.js"></script>
   <script src="assets/scripts/submitForm.js"></script>
   <script>
 		function enableBtn() {

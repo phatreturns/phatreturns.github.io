@@ -253,6 +253,11 @@ fieldset[disabled] .btn-theme {
   letter-spacing: 2px;
   border-radius: 0;
 }
+.btn-carousel:disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.25;
+}
 .header .logo-img,
 .header .logo-img-main,
 .header .logo-wrap {
@@ -1410,12 +1415,12 @@ textarea#message {
   border: 0;
   outline: none;
   vertical-align: middle;
-  /* color: #222b31; */
   font-size: 1rem;
   line-height: 2rem;
   max-width: 100%;
   background: #21252a;
   font-weight: 600;
+  color:rgb(255, 255, 255)!important
 }
 
 /* #Footer
