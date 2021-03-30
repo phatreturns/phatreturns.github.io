@@ -1,5 +1,6 @@
 $("form").submit(async function submitForm() {
   //check reCaptcha response
+  grecaptcha.execute();
   const captcha = await grecaptcha.getResponse();
   if (captcha.length === 0) {
     //reCaptcha not verified
