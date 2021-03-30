@@ -143,7 +143,9 @@
             </div> -->
             <div class="row">
               <div class="col-sm-12 col-md-6">
-                <input type="submit" value="Submit" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100 g-recaptcha" id="submit-button" data-callback="onSubmit" data-sitekey="6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO">
+                <input type="submit" value="Submit" class="btn btn-outline-light btn-carousel text-uppercase text-center w-100 g-recaptcha" id="submit-button" data-callback="onSubmit" data-theme="dark" data-sitekey="6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO" data-expired-callback="disableBtn" disabled="disabled">
+                <!--  PHAT Returns sitekey -->
+                <!-- data-sitekey="6Ld7jpQaAAAAADJDesfAcpbMuaCygmPycU-h8tfr" -->
               </div>
             </div>
           </form>
@@ -266,19 +268,15 @@
   <script src="assets/scripts/submitForm.js"></script>
   <script>
     function onSubmit(token) {
-        document.getElementById("Contact_Form").submit();
+      document.getElementById("submit-button").disabled = false;
+      document.getElementById("Contact_Form").submit();
     }
   </script>
-  <!-- <script>
-		function enableBtn() {
-			document.getElementById("submit-button").disabled = false;
-		}
-	</script>
 	<script>
 		function disableBtn() {
 			document.getElementById("submit-button").disabled = true;
 		}
-	</script> -->
+	</script>
 </body>
 
 </html>
