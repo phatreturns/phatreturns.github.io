@@ -265,8 +265,9 @@
 	<script src="assets/scripts/jquery-2.1.3.min.js"></script>
   <script src="assets/scripts/submitForm.js"></script>
   <script>
-		function enableBtn() {
+		function enableBtn(token) {
 			document.getElementById("submit-button").disabled = false;
+      document.getElementById("submit-button").submit();
 		}
 	</script>
 	<script>
