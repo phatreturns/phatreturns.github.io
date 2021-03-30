@@ -1,5 +1,7 @@
 // custom js to change navbar to dark on scroll
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {
+  myFunction();
+};
 
 var header = document.getElementById("nav");
 var sticky = header.offsetTop;

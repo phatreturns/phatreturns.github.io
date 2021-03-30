@@ -32,21 +32,20 @@ $("form").submit(async function submitForm() {
         clientMessage: `${message.value}`
       };
       console.log("running fetch");
-      fetch(
-        "https://dev-api.codeology.com.au/pickle/email/send",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
-          },
-          redirect: "follow",
-          body: JSON.stringify(formData)
-        }
-      )
-      .then(response => alert("Thank you for submitting a request. We will be in touch soon!"))
-      .then(response => location.reload())
-      .catch(error => console.error('Error: ', error));
+      fetch("https://dev-api.codeology.com.au/pickle/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
+        },
+        redirect: "follow",
+        body: JSON.stringify(formData)
+      })
+        .then(response =>
+          alert("Thank you for submitting a request. We will be in touch soon!")
+        )
+        .then(response => location.reload())
+        .catch(error => console.error("Error: ", error));
     }
   }
 });
