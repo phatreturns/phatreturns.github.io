@@ -19,31 +19,12 @@ $("#Contact_Form").submit(async function submitForm() {
   } else {
     // get recaptcha token from google
     let token = await validateCaptcha();
-    // grecaptcha.ready(function() {
-    //   // do request for recaptcha token
-    //   grecaptcha
-    //     .execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
-    //       action: "send_message"
-    //     })
-    //     .then(function(token) {
-    //       console.log(`token is ${token}`)
-    //       // handle token
-    //       if (token !== "") {
-    //         console.log("received token");
-    //         // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
-    //         event.preventDefault(); //prevent page reload
-    //         tokenData.recaptchaToken = token;
-    //       } else {
-    //         console.log("no token received from recaptcha");
-    //       }
-    //     });
-    // });
     console.log(`captcha token is: ${token}`)
     const tokenData = {
       recaptchaToken: token
     }
     // submit token to backend API for assessment by Google
-    let response = await fetch(
+    const response = await fetch(
       "https://dev-api.codeology.com.au/pickle-auth/recaptcha",
       {
         method: "POST",
@@ -55,8 +36,8 @@ $("#Contact_Form").submit(async function submitForm() {
         body: JSON.stringify(tokenData)
       }
     );
-    let data = await response.JSON();
-    if (data.status === 200) {
+    console.log(`response:` + response)
+    if (response.status === 200) {
       // if recaptcha successful then send email
       console.log("getting form data");
       const formData = {
@@ -67,7 +48,7 @@ $("#Contact_Form").submit(async function submitForm() {
         clientMessage: `${message.value}`
       };
       console.log("running fetch");
-      const response = fetch(
+      const data = fetch(
         "https://dev-api.codeology.com.au/pickle/email/send",
         {
           method: "POST",
@@ -79,10 +60,11 @@ $("#Contact_Form").submit(async function submitForm() {
           body: JSON.stringify(formData)
         }
       );
-      if (response.ok) {
+      console.log(`data:` + data)
+      if (data.ok) {
         alert("Thank you for submitting a request. We will be in touch soon!");
         location.reload();
-      } else if (!response.ok) {
+      } else if (!data.ok) {
         console.error("Error: ", error);
       }
     } else if (data.status === 400) {
