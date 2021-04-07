@@ -18,9 +18,9 @@ $("#Contact_Form").submit(async function submitForm() {
       event.preventDefault(); //prevent page reload
     } else {
       // time to test recaptacha
-      grecaptcha.ready(function() {
+      grecaptcha.ready(async function() {
         // do request for recaptcha token
-        grecaptcha.execute('6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO', {action: 'send_message'}).then(function(token) {
+        grecaptcha.execute('6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO', {action: 'send_message'}).then(async function(token) {
           // handle token
           if (token !== "") {
             // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
@@ -29,7 +29,7 @@ $("#Contact_Form").submit(async function submitForm() {
               recaptchaToken: `${token}`
             }
             // validate token with backend API
-            const res = fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
+            const res = await fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
