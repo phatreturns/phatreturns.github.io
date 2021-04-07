@@ -26,6 +26,7 @@ $("#Contact_Form").submit(async function submitForm() {
           action: "send_message"
         })
         .then(function(token) {
+          console.log(`token is ${token}`)
           // handle token
           if (token !== "") {
             console.log("received token");
