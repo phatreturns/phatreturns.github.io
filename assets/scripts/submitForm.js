@@ -18,7 +18,7 @@ $("#Contact_Form").submit(async function submitForm() {
       event.preventDefault(); //prevent page reload
     } else {
       // time to test recaptacha
-      grecaptcha.ready(async function() {
+      grecaptcha.ready(function() {
         // do request for recaptcha token
         grecaptcha.execute('6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO', {action: 'send_message'}).then(function(token) {
           // handle token
@@ -29,7 +29,7 @@ $("#Contact_Form").submit(async function submitForm() {
               recaptchaToken: `${token}`
             }
             // validate token with backend API
-            let res = await fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
+            fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -38,8 +38,8 @@ $("#Contact_Form").submit(async function submitForm() {
               redirect: "follow",
               body: JSON.stringify(tokenData)
             })
-            let data = await res.JSON();
-            console.log(`recaptcha data: ${data}`);
+            .then(response => response.json()) 
+            .then(data => console.log(data))
             if (data.status === 201) {
               // recaptcha successful
               console.log("getting form data");
