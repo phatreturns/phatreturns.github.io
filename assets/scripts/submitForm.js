@@ -29,7 +29,7 @@ $("#Contact_Form").submit(async function submitForm() {
               recaptchaToken: `${token}`
             }
             // validate token with backend API
-            const res = await fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
+            const res = fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
               method: "POST",
               body: JSON.stringify(tokenData)
             })
@@ -46,7 +46,7 @@ $("#Contact_Form").submit(async function submitForm() {
                 clientMessage: `${message.value}`
               };
               console.log("running fetch");
-              const response = await fetch("https://dev-api.codeology.com.au/pickle/email/send", {
+              const response = fetch("https://dev-api.codeology.com.au/pickle/email/send", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json"
