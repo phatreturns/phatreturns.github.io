@@ -38,7 +38,7 @@ $("#Contact_Form").submit(async function submitForm() {
               redirect: "follow",
               body: JSON.stringify(tokenData)
             })
-            let data = await res.JSON();
+            let data = res.JSON();
             console.log(`recaptcha data: ${data}`);
             if (data.status === 201) {
               // recaptcha successful
