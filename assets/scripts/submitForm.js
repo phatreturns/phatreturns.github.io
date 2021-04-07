@@ -35,9 +35,10 @@ $("#Contact_Form").submit(async function submitForm() {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
               },
+              redirect: "follow",
               body: JSON.stringify(tokenData)
             })
-            let data = res.data;
+            let data = await res.JSON();
             console.log(`recaptcha data: ${data}`);
             if (data.status === 201) {
               // recaptcha successful
