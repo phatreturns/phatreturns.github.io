@@ -36,7 +36,6 @@ $("#Contact_Form").submit(async function submitForm() {
         body: JSON.stringify(tokenData)
       }
     );
-    console.log(`response:` + response)
     if (response.status === 200) {
       // if recaptcha successful then send email
       console.log("getting form data");
@@ -61,11 +60,11 @@ $("#Contact_Form").submit(async function submitForm() {
         }
       );
       console.log(`data:` + data)
-      if (data.ok) {
+      if (data.status === 200) {
         alert("Thank you for submitting a request. We will be in touch soon!");
         location.reload();
-      } else if (!data.ok) {
-        console.error("Error: ", error);
+      } else {
+        alert("Error: failed to send");
       }
     } else if (data.status === 400) {
       // recaptcha failed
