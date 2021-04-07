@@ -39,6 +39,7 @@ $("#Contact_Form").submit(async function submitForm() {
           }
         });
     });
+    console.log(`captcha token is: ${tokenData.recaptchaToken}`)
     // submit token to backend API for assessment by Google
     let response = await fetch(
       "https://dev-api.codeology.com.au/pickle-auth/recaptcha",
