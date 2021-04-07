@@ -2,11 +2,11 @@ $("#Contact_Form").submit(async function submitForm() {
    // stop page reload
   event.preventDefault();
     // validate form
-    var firstName = document.getElementById("first-name");
-    var lastName = document.getElementById("last-name");
-    var email = document.getElementById("email");
-    var phone = document.getElementById("phone");
-    var message = document.getElementById("message");
+    const firstName = document.getElementById("first-name");
+    const lastName = document.getElementById("last-name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const message = document.getElementById("message");
     if (
       firstName.value === "" ||
       lastName.value === "" ||
@@ -17,32 +17,26 @@ $("#Contact_Form").submit(async function submitForm() {
       alert("Please complete all fields before submitting the form");
       event.preventDefault(); //prevent page reload
     } else {
-      // recaptacha ready
+      // time to test recaptacha
       grecaptcha.ready(function() {
         // do request for recaptcha token
-        // response is promise with passed token
         grecaptcha.execute('6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO', {action: 'send_message'}).then(function(token) {
-          // check token
+          // handle token
           if (token !== "") {
-            const data = {
-              recaptchaToken: token
-            };
-            console.log("running recaptcha verfication");
-            fetch("https://dev-api.codeology.com.au/pickle/site/captcha", {
+            // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
+            event.preventDefault(); //prevent page reload
+            const tokenData = {
+              recaptchaToken: `${token}`
+            }
+            // validate token with backend API
+            const res = await fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
-              },
-              redirect: "follow",
-              body: JSON.stringify(data)
+              body: JSON.stringify(tokenData)
             })
-            .then(response =>
-              console.log('recaptcha ok, sending email')
-            )
-            .then(response => {
-              // send email
-              event.preventDefault(); //prevent page reload
+            let data = res.data;
+            console.log(`recaptcha data: ${data}`);
+            if (data.status === 201) {
+              // recaptcha successful
               console.log("getting form data");
               const formData = {
                 clientFirstName: `${firstName.value}`,
@@ -52,49 +46,28 @@ $("#Contact_Form").submit(async function submitForm() {
                 clientMessage: `${message.value}`
               };
               console.log("running fetch");
-              fetch("https://dev-api.codeology.com.au/pickle/email/send", {
+              const response = await fetch("https://dev-api.codeology.com.au/pickle/email/send", {
                 method: "POST",
                 headers: {
-                  "Content-Type": "application/json",
-                  "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
+                  "Content-Type": "application/json"
+                  // "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
                 },
                 redirect: "follow",
                 body: JSON.stringify(formData)
               })
-                .then(response2 =>
-                  alert("Thank you for submitting a request. We will be in touch soon!")
-                )
-                .then(response2 => location.reload())
-                .catch(error => console.error("Send Error: ", error));
-            })
-            .catch(error => console.error("Captcha Error: Bot detected?", error));
-            // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
-            // event.preventDefault(); //prevent page reload
-            // console.log("getting form data");
-            // const formData = {
-            //   clientFirstName: `${firstName.value}`,
-            //   clientLastName: `${lastName.value}`,
-            //   clientEmail: `${email.value}`,
-            //   clientPhone: `${phone.value}`,
-            //   clientMessage: `${message.value}`
-            // };
-            // console.log("running fetch");
-            // fetch("https://dev-api.codeology.com.au/pickle/email/send", {
-            //   method: "POST",
-            //   headers: {
-            //     "Content-Type": "application/json",
-            //     "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
-            //   },
-            //   redirect: "follow",
-            //   body: JSON.stringify(formData)
-            // })
-            //   .then(response =>
-            //     alert("Thank you for submitting a request. We will be in touch soon!")
-            //   )
-            //   .then(response => location.reload())
-            //   .catch(error => console.error("Error: ", error));
+              if (response.ok) {
+                alert("Thank you for submitting a request. We will be in touch soon!");
+                location.reload();
+              } else if (!response.ok) {
+                console.error("Error: ", error)
+              }
+            } else if (data.status === 400 ) {
+              // recaptcha failed
+              alert("You failed the Google Recaptcha.")
+              console.log('google recaptcha failed - possible bot')
+            }
           } else {
-            console.log('recaptcha token not generated')
+            console.log('no token received from recaptcha')
           }
         });
       })
