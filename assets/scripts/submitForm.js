@@ -18,7 +18,7 @@ $("#Contact_Form").submit(async function submitForm() {
     event.preventDefault(); //prevent page reload
   } else {
     // get recaptcha token from google
-    let token = await this.validateCaptcha();
+    let token = await validateCaptcha();
     // grecaptcha.ready(function() {
     //   // do request for recaptcha token
     //   grecaptcha
