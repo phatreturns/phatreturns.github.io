@@ -18,9 +18,9 @@ $("#Contact_Form").submit(async function submitForm() {
       event.preventDefault(); //prevent page reload
     } else {
       // time to test recaptacha
-      grecaptcha.ready(async function() {
+      grecaptcha.ready(function() {
         // do request for recaptcha token
-        grecaptcha.execute('6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO', {action: 'send_message'}).then(async function(token) {
+        grecaptcha.execute('6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO', {action: 'send_message'}).then(function(token) {
           // handle token
           if (token !== "") {
             // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
@@ -29,7 +29,7 @@ $("#Contact_Form").submit(async function submitForm() {
               recaptchaToken: `${token}`
             }
             // validate token with backend API
-            const res = await fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
+            const res = fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -39,39 +39,38 @@ $("#Contact_Form").submit(async function submitForm() {
               body: JSON.stringify(tokenData)
             })
             // let data = res.JSON();
-            console.log('does this work')
             console.log(res);
-            // if (data.status === 200) {
-            //   // recaptcha successful
-            //   console.log("getting form data");
-            //   const formData = {
-            //     clientFirstName: `${firstName.value}`,
-            //     clientLastName: `${lastName.value}`,
-            //     clientEmail: `${email.value}`,
-            //     clientPhone: `${phone.value}`,
-            //     clientMessage: `${message.value}`
-            //   };
-            //   console.log("running fetch");
-            //   const response = fetch("https://dev-api.codeology.com.au/pickle/email/send", {
-            //     method: "POST",
-            //     headers: {
-            //       "Content-Type": "application/json",
-            //       "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
-            //     },
-            //     redirect: "follow",
-            //     body: JSON.stringify(formData)
-            //   })
-            //   if (response.ok) {
-            //     alert("Thank you for submitting a request. We will be in touch soon!");
-            //     location.reload();
-            //   } else if (!response.ok) {
-            //     console.error("Error: ", error)
-            //   }
-            // } else if (data.status === 400 ) {
-            //   // recaptcha failed
-            //   alert("You failed the Google Recaptcha.")
-            //   console.log('google recaptcha failed - possible bot')
-            // }
+            if (data.status === 200) {
+              // recaptcha successful
+              console.log("getting form data");
+              const formData = {
+                clientFirstName: `${firstName.value}`,
+                clientLastName: `${lastName.value}`,
+                clientEmail: `${email.value}`,
+                clientPhone: `${phone.value}`,
+                clientMessage: `${message.value}`
+              };
+              console.log("running fetch");
+              const response = fetch("https://dev-api.codeology.com.au/pickle/email/send", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
+                },
+                redirect: "follow",
+                body: JSON.stringify(formData)
+              })
+              if (response.ok) {
+                alert("Thank you for submitting a request. We will be in touch soon!");
+                location.reload();
+              } else if (!response.ok) {
+                console.error("Error: ", error)
+              }
+            } else if (data.status === 400 ) {
+              // recaptcha failed
+              alert("You failed the Google Recaptcha.")
+              console.log('google recaptcha failed - possible bot')
+            }
           } else {
             console.log('no token received from recaptcha')
           }
