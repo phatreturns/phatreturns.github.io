@@ -18,27 +18,30 @@ $("#Contact_Form").submit(async function submitForm() {
     event.preventDefault(); //prevent page reload
   } else {
     // get recaptcha token from google
-    let tokenData = {};
-    await grecaptcha.ready(function() {
-      // do request for recaptcha token
-      grecaptcha
-        .execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
-          action: "send_message"
-        })
-        .then(function(token) {
-          console.log(`token is ${token}`)
-          // handle token
-          if (token !== "") {
-            console.log("received token");
-            // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
-            event.preventDefault(); //prevent page reload
-            tokenData.recaptchaToken = token;
-          } else {
-            console.log("no token received from recaptcha");
-          }
-        });
-    });
-    console.log(`captcha token is: ${tokenData.recaptchaToken}`)
+    let token = await this.validateCaptcha();
+    // grecaptcha.ready(function() {
+    //   // do request for recaptcha token
+    //   grecaptcha
+    //     .execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
+    //       action: "send_message"
+    //     })
+    //     .then(function(token) {
+    //       console.log(`token is ${token}`)
+    //       // handle token
+    //       if (token !== "") {
+    //         console.log("received token");
+    //         // $('#Contact_Form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">')
+    //         event.preventDefault(); //prevent page reload
+    //         tokenData.recaptchaToken = token;
+    //       } else {
+    //         console.log("no token received from recaptcha");
+    //       }
+    //     });
+    // });
+    console.log(`captcha token is: ${token}`)
+    const tokenData = {
+      recaptchaToken: token
+    }
     // submit token to backend API for assessment by Google
     let response = await fetch(
       "https://dev-api.codeology.com.au/pickle-auth/recaptcha",
@@ -89,3 +92,16 @@ $("#Contact_Form").submit(async function submitForm() {
     }
   }
 });
+
+validateCaptcha() {
+  return new Promise((res, rej) => {
+    grecaptcha.ready(function() {
+      grecaptcha.execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
+        action: "send_message"
+      })
+      .then(function(token) {
+          return res(token);
+      })
+    })
+  })
+};
