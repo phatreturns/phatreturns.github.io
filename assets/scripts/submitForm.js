@@ -93,7 +93,7 @@ $("#Contact_Form").submit(async function submitForm() {
   }
 });
 
-validateCaptcha() {
+function validateCaptcha() {
   return new Promise((res, rej) => {
     grecaptcha.ready(function() {
       grecaptcha.execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
