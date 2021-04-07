@@ -31,6 +31,10 @@ $("#Contact_Form").submit(async function submitForm() {
             // validate token with backend API
             const res = fetch("https://dev-api.codeology.com.au/pickle-auth/recaptcha", {
               method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
+              },
               body: JSON.stringify(tokenData)
             })
             let data = res.data;
@@ -49,8 +53,8 @@ $("#Contact_Form").submit(async function submitForm() {
               const response = fetch("https://dev-api.codeology.com.au/pickle/email/send", {
                 method: "POST",
                 headers: {
-                  "Content-Type": "application/json"
-                  // "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
+                  "Content-Type": "application/json",
+                  "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
                 },
                 redirect: "follow",
                 body: JSON.stringify(formData)
