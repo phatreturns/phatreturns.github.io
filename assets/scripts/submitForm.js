@@ -59,7 +59,7 @@ $("#Contact_Form").submit(async function submitForm() {
           body: JSON.stringify(formData)
         }
       );
-      console.log(`data:` + data)
+      console.log(`data:` + JSON.stringify(data))
       if (data.status === 200) {
         alert("Thank you for submitting a request. We will be in touch soon!");
         location.reload();
