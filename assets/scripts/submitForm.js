@@ -47,7 +47,7 @@ $("#Contact_Form").submit(async function submitForm() {
         clientMessage: `${message.value}`
       };
       console.log("running fetch");
-      const data = fetch(
+      const data = await fetch(
         "https://dev-api.codeology.com.au/pickle/email/send",
         {
           method: "POST",
