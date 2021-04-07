@@ -19,7 +19,7 @@ $("#Contact_Form").submit(async function submitForm() {
   } else {
     // get recaptcha token from google
     let tokenData = {};
-    grecaptcha.ready(function() {
+    await grecaptcha.ready(function() {
       // do request for recaptcha token
       grecaptcha
         .execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
