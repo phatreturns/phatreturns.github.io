@@ -77,7 +77,7 @@ $("#Contact_Form").submit(async function submitForm() {
 function validateCaptcha() {
   return new Promise((res, rej) => {
     grecaptcha.ready(function() {
-      grecaptcha.execute("6Ld3jpQaAAAAAPp0bz0rCE5ZYjYOLthv-5C7TbDO", {
+      grecaptcha.execute("6Ld7jpQaAAAAADJDesfAcpbMuaCygmPycU-h8tfr", {
         action: "send_message"
       })
       .then(function(token) {
