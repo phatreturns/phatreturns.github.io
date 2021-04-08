@@ -19,10 +19,9 @@ $("#Contact_Form").submit(async function submitForm() {
   } else {
     // get recaptcha token from google
     let token = await validateCaptcha();
-    console.log(`captcha token is: ${token}`)
     const tokenData = {
       recaptchaToken: token
-    }
+    };
     // submit token to backend API for assessment by Google
     const response = await fetch(
       "https://dev-api.codeology.com.au/pickle-auth/recaptcha",
@@ -59,15 +58,16 @@ $("#Contact_Form").submit(async function submitForm() {
           body: JSON.stringify(formData)
         }
       );
-      console.log(`data:` + JSON.stringify(data))
       if (data.status === 200) {
+        // if email send successful
         alert("Thank you for submitting a request. We will be in touch soon!");
         location.reload();
       } else {
+        // if email send failed
         alert("Error: failed to send");
       }
-    } else if (data.status === 400) {
-      // recaptcha failed
+    } else if (response.status === 400) {
+      // if recaptcha failed
       alert("You failed the Google Recaptcha.");
       console.log("google recaptcha failed - possible bot");
     }
@@ -82,7 +82,7 @@ function validateCaptcha() {
       })
       .then(function(token) {
           return res(token);
-      })
-    })
-  })
-};
+      });
+    });
+  });
+}
