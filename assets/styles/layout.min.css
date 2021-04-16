@@ -1280,6 +1280,11 @@ li a.badge-googleplay {
 /* #Accordion
 ================================================== */
 
+.accordion-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .accordion-button {
   color: #fff;
 }
