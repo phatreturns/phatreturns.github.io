@@ -56,6 +56,9 @@ html,
 html a {
   -webkit-font-smoothing: antialiased;
 }
+body {
+  overflow: hidden;
+}
 p {
   font-size: 16px;
   color: #777777;
