@@ -57,7 +57,7 @@ $("#Contact_Form").submit(async function() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.phatreturns.com.au/"
+            "Access-Control-Allow-Origin": "https://phatreturns.com.au"
           },
           redirect: "follow",
           body: JSON.stringify(l)
