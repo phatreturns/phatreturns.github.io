@@ -45,7 +45,7 @@ $("#Contact_Form").submit(async function() {
     if (200 === i.status) {
       console.log("getting form data");
       const l = {
-        businessEmail: `[taxinfo@phatreturns.com.au]`,
+        businessEmail: "taxinfo@phatreturns.com.au",
         clientBody: `<strong>This is an automated email to inform you that a new message has been received via the PHAT Returns website.</strong><br><br>Details of the request are below.<br><br>Name: ${e.value} ${t.value}<br>Email: ${a.value}<br>Phone: ${o.value}<br> Message: ${n.value}`,
         clientTitle: `New Message from ${e.value} ${t.value} has been received`,
         toAddresses: ["taxinfo@phatreturns.com.au"]
