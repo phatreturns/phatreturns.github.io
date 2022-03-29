@@ -15,6 +15,6 @@
   </b>
 </h3>
 
-=========================
-
+<p align="center">
 This website is built in static HTML and Bootstrap.
+</p>
